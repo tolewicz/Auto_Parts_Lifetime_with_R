@@ -1,0 +1,30 @@
+#MPG regression:
+
+* The correlation matrix showed moderate correlation of mpg with vehicle_lenght r = 0.61. For vehicle_lenght Pr(>|t|) is 3.03*10^-12 so the null hypothesis Ho is excluded. 
+There is also weak correlation of mpg with ground_clearance r=0.33 with Pr(>|t|) =2.13*10^-8, also non random variance. 
+Other parameters show either none or very weak correlation thus I did not included them into the model.
+* The slope mpg(vehicle_lenght) is non zero with r^2 = 0.67
+
+
+#Suspension Coil Summary
+*The statistics of whole population is in a table “Statistics_psi”. 
+Mean of whole population is 1498.78 and median = 1500, with variance = 62.29 and standard deviation = 7.89. 
+In the first glance everything is within spec: variance 100. However, 
+when data is grouped by lot (table Statistics_psi_per_lot) then Lot3 has variance out of spec = 170.29, 
+which probably is the contributor for underperformance of part of the vehicle fleet.  
+
+
+#Suspension coil T-Test
+*Conducting paired t-test to determine potential difference between lots 1,2,3. Paired t-test is possible becaseu sample count in Lots1,2,3 is the same , 50.
+Paired t-test showed for lot1 vs lot3 p=0.0437 and for lot2 vs lot-3 p=0.04199, Ho for both tests is rejected 
+i.e. mean of lot 3 statistically is different than lot 1 and lot2. The sanity test, t-test for lot 1 vs lot 2 produced p= 0.6052, not rejecting Ho true difference of is equal to 0
+
+
+#Design own test
+
+“If the quality is right, everything is right”. 
+*One of the key factors showing that MechaCar outperforms the competition is the reliability of car components. 
+There are few items to focus: breaks,  engine, battery lifetime. We can conduct Weibull analysis on reliability of those components. 
+By knowing the number of failures and estimate of the population we can calculate the average lifetime and probability of failure of the components, 
+and set it against the competitor.  We can collect distribution of the lifetime of parts, e.g. breaks from MechaCar and competition and conduct t-test to compare the mean lifetime. 
+If MechaCar lifetime of the component is longer than competitor, that can be used as a factor to promote MechaCar.
